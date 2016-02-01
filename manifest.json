@@ -1,0 +1,22 @@
+{
+  "name": "Search with +",
+  "description": "Shows some of the features of the Context Menus API using an event page",
+  "version": "0.1",
+  "permissions": ["contextMenus","tabs","storage","http://*/*","https://*/*"],
+  "background": {
+    "persistent": false,
+    "scripts": ["sample.js"]
+  },
+  "options_ui": {
+    "page":"options.html",
+    "chrome_style": true
+  },
+  "browser_action": {
+    "default_icon": "magnifying glass139.png",
+    "default_popup":"popup.html"
+  },
+  "manifest_version": 2,
+  "icons":{
+    "16":"magnifying glass139.png"
+  }
+}
