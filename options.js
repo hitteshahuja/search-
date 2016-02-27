@@ -1,5 +1,3 @@
-
-
 function save_options() {
     var selectedEngine = document.getElementsByClassName('searchengine');
     var textToAppend = document.getElementById("append");
@@ -18,13 +16,11 @@ function save_options() {
     }
 
 function restore_options() {
-    console.log("restoring");
     chrome.storage.sync.get({
         selectedEngine: 'Google',
         appendText: '',
         prependText:''
     }, function(items) {
-        console.log(items);
         var selectedEngine = document.getElementsByClassName('searchengine');
         for(i=0;i<selectedEngine.length;i++){
             if(items.selectedEngine == selectedEngine[i].value){
@@ -35,8 +31,6 @@ function restore_options() {
         document.getElementById('prepend').value = items.prependText;
     });
 }
-
-
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click',
     save_options);

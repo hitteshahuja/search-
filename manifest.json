@@ -5,15 +5,11 @@
   "permissions": ["contextMenus","tabs","storage","http://*/*","https://*/*"],
   "background": {
     "persistent": false,
-    "scripts": ["sample.js"]
+    "scripts": ["extension.js"]
   },
   "options_ui": {
     "page":"options.html",
     "chrome_style": true
-  },
-  "browser_action": {
-    "default_icon": "search_plus.png",
-    "default_popup":"popup.html"
   },
   "manifest_version": 2,
   "icons":{
