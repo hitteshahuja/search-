@@ -1,6 +1,7 @@
 {
   "name": "Search with +",
-  "description": "Shows some of the features of the Context Menus API using an event page",
+  "short_name":"Search with +",
+  "description": "Simple chrome extension that lets you search various popular search engines ",
   "version": "0.1",
   "permissions": ["contextMenus","tabs","storage","http://*/*","https://*/*"],
   "background": {

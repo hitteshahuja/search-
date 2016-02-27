@@ -70,7 +70,7 @@ chrome.storage.onChanged.addListener(function(changes,ns){
             var title = "Search for '"+items.prependText+" %s "+items.appendText+"' on "+selectedSearchEngine;
         }
         else{
-            var title = "Search for %s on "+selectedSearchEngine;
+            var title = "Search for '%s' on "+selectedSearchEngine;
         }
          chrome.contextMenus.update("contextselection",{"title": title});
     });
@@ -91,7 +91,7 @@ chrome.runtime.onInstalled.addListener(function() {
             var title = "Search for '"+items.prependText+" %s "+items.appendText+"' on "+selectedSearchEngine;
         }
         else{
-            var title = "Search for %s on "+selectedSearchEngine;
+            var title = "Search for '%s' on "+selectedSearchEngine;
         }
 
         var id = chrome.contextMenus.create({"title": title, "contexts":["selection"],
