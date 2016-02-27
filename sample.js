@@ -51,6 +51,8 @@ function getSEURL(searchengine){
         case 'Tumblr':
             SEurl = "http://www.tumblr.com/search/";
             break;
+        case 'AmazonUK':
+            SEurl ="http://www.amazon.co.uk/s/field-keywords=";
     }
 return SEurl;
 }

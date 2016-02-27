@@ -12,11 +12,13 @@
     "chrome_style": true
   },
   "browser_action": {
-    "default_icon": "magnifying glass139.png",
+    "default_icon": "search_plus.png",
     "default_popup":"popup.html"
   },
   "manifest_version": 2,
   "icons":{
-    "16":"magnifying glass139.png"
+    "16":"search_plus.png",
+    "32":"search_plus.png",
+    "48":"search_plus.png"
   }
 }
