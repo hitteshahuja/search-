@@ -53,6 +53,8 @@ function getSEURL(searchengine){
             break;
         case 'AmazonUK':
             SEurl ="http://www.amazon.co.uk/s/field-keywords=";
+        case "Youtube":
+            SEurl ="http://www.youtube.com/results?search_query=";
     }
 return SEurl;
 }
@@ -64,7 +66,12 @@ chrome.storage.onChanged.addListener(function(changes,ns){
         prependText:''
     },function(items){
         var selectedSearchEngine = items.selectedEngine;
-        var title = "Search for '"+items.prependText+" %s "+items.appendText+"' on "+selectedSearchEngine;
+        if(items.appendText !== "" || items.prependText !== ""){
+            var title = "Search for '"+items.prependText+" %s "+items.appendText+"' on "+selectedSearchEngine;
+        }
+        else{
+            var title = "Search for %s on "+selectedSearchEngine;
+        }
          chrome.contextMenus.update("contextselection",{"title": title});
     });
 });
@@ -80,7 +87,13 @@ chrome.runtime.onInstalled.addListener(function() {
     },function(items){
 
         var selectedSearchEngine = items.selectedEngine;
-        var title = "Search for '"+items.prependText+" %s "+items.appendText+"' on "+selectedSearchEngine;
+        if(items.appendText !== "" || items.prependText !== ""){
+            var title = "Search for '"+items.prependText+" %s "+items.appendText+"' on "+selectedSearchEngine;
+        }
+        else{
+            var title = "Search for %s on "+selectedSearchEngine;
+        }
+
         var id = chrome.contextMenus.create({"title": title, "contexts":["selection"],
             "id": "context" + "selection"},function(){});
     });
